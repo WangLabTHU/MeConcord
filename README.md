@@ -65,7 +65,7 @@ Usage: `visualization_Matlab.m`
 	* `path_to_cpgPos` as the path you deposit CpG positions of the genome, which is the result of pre_cpg_pos.py;
 	* `name` as the name of MeMatrix, for example 'test_chr1_1287967_1288117';
 
-* Output:two lollipop plots, one without considering distance between CpGs, one considering distance between CpGs.
+* Output: two lollipop plots, one without considering distance between CpGs, one considering distance between CpGs.
 	* unmethylated CpGs are labeled as light blue
 	* CpGs without signal are labeled as grey
 	* methylated CpGs are labeled as dark red
