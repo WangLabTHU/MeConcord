@@ -88,7 +88,7 @@ def each_chrom(outpre,infile,cpgpos_path,binfile,chrom):
     #processing
     idx = 0
     for i in range(0, bin_sort.shape[0]):
-        split_num = int(math.ceil((bin_sort.iloc[i,2]-bin_sort.iloc[i,1]+1)/interval_size))
+        split_num = int(math.ceil((bin_sort.iloc[i,2]-bin_sort.iloc[i,1]+1)*1.0/interval_size))
         if basedon0 == 1:
             interval_name = chrom+'_'+str(bin_sort.iloc[i,1]-1)+'_'+str(bin_sort.iloc[i,2])#to 0-based
         else:
@@ -225,9 +225,9 @@ def each_chrom(outpre,infile,cpgpos_path,binfile,chrom):
                               str(methy_level)+'\t'+\
                               str(concordant_reads)+'\t'+\
                               str(concordant_sites)+'\t'+\
-                              str(concordant_reads-exp_reads)+'\t'+\
+                              str(round(concordant_reads-exp_reads,3))+'\t'+\
                               '%.3e' % p_reads+'\t'+\
-                              str(concordant_sites-exp_cpgs)+'\t'+\
+                              str(round(concordant_sites-exp_cpgs,3))+'\t'+\
                               '%.3e' % p_cpgs+'\t'+\
                               str(downsample)+'\n')
             else:

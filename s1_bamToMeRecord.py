@@ -53,7 +53,7 @@ def flags_convert(score):
     par = [128,64,32,16,8,4,2]
     flags_info = []
     for item in par:
-        flags_info.append(score/item)
+        flags_info.append(score//item)
         score = score%item
     flags_info.append(score)
     return flags_info
@@ -302,7 +302,7 @@ if __name__ == '__main__':
         if reads_num_count< -6:##just test
             break
         try:
-            line = indata.next()
+            line = next(indata) ##indata.next()
             if infile[-4:] == '.bam':
                 line = line.to_string()
         except:

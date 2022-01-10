@@ -1,28 +1,30 @@
 
 # MeConcord
 MeConcord is a method used to investigate local read-level DNA methylation patterns for intermediately methylated regions with bisulfite sequencing data.
+# Installation
+MeConcord is implemented by Python2. 
 
-## 1.Obtaining CpG positions across genome
+### 1.Obtaining CpG positions across genome
 Usage: python pre_cpg_pos.py -i hg38.fa -o ./cpg_pos/
 * `i`,  The path to reference sequences (.fa);
 * `o`,  The path that you want to deposit the positions of CpG sites, each chromosome has a seperate file;
 * `h`,  Help information
 
-## 2.Converting mapped Bam, Sam, Sam.gz files from Bismark To methylation recordings read-by-read
+### 2.Converting mapped Bam, Sam, Sam.gz files from Bismark To methylation recordings read-by-read
 Usage: python s1_bamToMeRecord.py -i test.bam -o test -c 0
 * `i`,  The path to input files (.bam or .sam or .sam.gz);
 * `o`,  Output prefix;
 * `c`,  Clipping read ends with such base number (defalut 0); can be used when sequencing quality of read ends is not good. such as -c 5 to remove 5 bases from the both ends of the reads.
 * `h`,  Help information
 
-## 3.Spliting the big MeRecord files into small files of each chromosome to redude memory requirement in next step
+### 3.Spliting the big MeRecord files into small files of each chromosome to redude memory requirement in next step
 Usage: python s2_RecordSplit.py -i ./test_ReadsMethyAndMuts.txt -o ./test -g chr1,chr2,chr3,chr4,chr5
 * `i`,  The path to s1 output. ( end with _ReadsMethyAndMuts.txt);
 * `o`,  Output prefix;
 * `g`,  Chromosomes used; (default chromsome 1-22); chromosomes shoud be seperated by comma;
 * `h`,  Help information
 
-## 4. Calculating concordance metrics
+### 4. Calculating concordance metrics
 Usage: python s3_RecordToMeConcord.py -p 4 -i ./test -o ./test -r ./region.bed -c ./cpgpos/ -b 150 -m 600 -z 0 -g chr1,chr2,chr3
 * `i`,  The path to s2_RecordSplit.py output, with prefix file name;
 * `p`,  Threads used for parallel computation; default is 4;
@@ -34,7 +36,7 @@ Usage: python s3_RecordToMeConcord.py -p 4 -i ./test -o ./test -r ./region.bed -
 * `g`,  Chromosomes used; (default chromsome 1-22); chromosomes shoud be seperated by comma;
 * `m`,  Maximum of fragement length in sequencing library(default 600bp for paired-end reads). if there are single-end reads,m should be set as the length of reads, if not sure, default will work for most cases;
 
-## 5. Methylation recordings to methylation matrix (optional)
+### 5. Methylation recordings to methylation matrix (optional)
 Usage: python s4_RecordToMeMatrix.py -i ./test -o ./test -r ./p1.bed -c ./cpgpos/ -m 600 -z 0 -g chr1,chr2
 * `i`,  The path to s2_RecordSplit.py output, with prefix file name;
 * `o`,  Output prefix;
@@ -44,7 +46,7 @@ Usage: python s4_RecordToMeMatrix.py -i ./test -o ./test -r ./p1.bed -c ./cpgpos
 * `g`,  Chromosomes used; (default chromsome 1-22); chromosomes shoud be seperated by comma;
 * `m`,  Maximum of reads length (default 600bp for paired-end reads). if there are single-end reads,m should be set length of reads, if not sure, default will work for most cases;
 
-## 6. Visualization of methylation matrix (optional)
+### 6. Visualization of methylation matrix (optional)
 Usage: visualization_Matlab.m 
 Open this script and edit
 * `path_to_matrix` as the path you deposit the MeMatrix;
@@ -56,10 +58,11 @@ Output:two lollipop plots, one without considering distance between CpGs, one co
 *methylated CpGs are labeled as dark red
 
 ## Test for an example
-*python s1_bamToMeRecord.py -i ./GM12878_chr1_1286017_1294783.bam -o ./test/test -c 2
-
-*python s2_RecordSplit.py -i ./test/test_ReadsMethyAndMuts.txt -o ./test/test -g chr1
-
-*python s3_RecordToMeConcord.py -p 1 -i ./test/test -o ./test/test -r ./test/tmp1.bed -c ./test/ -b 150 -m 600 -z 1 -g chr1
-
-*python s4_RecordToMeMatrix.py -i ./test/test -o ./test/test -r ./test/tmp2.bed -c ./test/ -m 600 -z 1 -g chr1
+* python s1_bamToMeRecord.py -i ./test/GM12878_chr1_1286017_1294783.bam -o ./test/test -c 2
+error `Could not retrieve index file for './test/GM12878_chr1_1286017_1294783.bam'` doesn't affect the results. Please check if there is an output in test folder, test_ReadsMethyAndMuts.txt. If yes, it works.
+* python s2_RecordSplit.py -i ./test/test_ReadsMethyAndMuts.txt -o ./test/test -g chr1
+Please check if there is an output in test folder, test_ReadsMethyAndMuts_chr1.txt. If yes, it works.
+* python s3_RecordToMeConcord.py -p 1 -i ./test/test -o ./test/test -r ./test/tmp1.bed -c ./test/ -b 150 -m 600 -z 1 -g chr1
+Please check if there is an output in test folder, test_MeConcord.txt. If yes, it works.
+* python s4_RecordToMeMatrix.py -i ./test/test -o ./test/test -r ./test/tmp2.bed -c ./test/ -m 600 -z 1 -g chr1
+Please check if there is two output files in test folder, test_chr1_1287967_1288117_me.txt; test_chr1_1287967_1288117_unme.txt. If yes, it works.
