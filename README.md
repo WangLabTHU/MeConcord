@@ -71,16 +71,16 @@ Usage: `visualization_Matlab.m`
 	* methylated CpGs are labeled as dark red
 
 ## Test for an example
-* STEP 1 `python s1_bamToMeRecord.py -i ./test/GM12878_chr1_1286017_1294783.bam -o ./test/test -c 2` or `python s1_bamToMeRecord.py -i ./test/GM12878_chr1_1286017_1294783.sam -o ./test/test -c 2` if there is no pysam module on Windows
+* *STEP 1* `python s1_bamToMeRecord.py -i ./test/GM12878_chr1_1286017_1294783.bam -o ./test/test -c 2` or `python s1_bamToMeRecord.py -i ./test/GM12878_chr1_1286017_1294783.sam -o ./test/test -c 2` if there is no pysam module on Windows
 
 	* The error that `Could not retrieve index file for './test/GM12878_chr1_1286017_1294783.bam'` doesn't affect the results.
 	* Please check if there is an output in test folder, `test_ReadsMethyAndMuts.txt`. If yes, it works.
-* STEP 2 `python s2_RecordSplit.py -i ./test/test_ReadsMethyAndMuts.txt -o ./test/test -g chr1`
+* *STEP 2* `python s2_RecordSplit.py -i ./test/test_ReadsMethyAndMuts.txt -o ./test/test -g chr1`
 
 	* Please check if there is an output in test folder, `test_ReadsMethyAndMuts_chr1.txt`. If yes, it works.
-* STEP 2 `python s3_RecordToMeConcord.py -p 1 -i ./test/test -o ./test/test -r ./test/tmp1.bed -c ./test/ -b 150 -m 600 -z 1 -g chr1`
+* *STEP 3* `python s3_RecordToMeConcord.py -p 1 -i ./test/test -o ./test/test -r ./test/tmp1.bed -c ./test/ -b 150 -m 600 -z 1 -g chr1`
 
 	* Please check if there is an output in test folder, `test_MeConcord.txt`. If yes, it works.
-* STEP 2 `python s4_RecordToMeMatrix.py -i ./test/test -o ./test/test -r ./test/tmp2.bed -c ./test/ -m 600 -z 1 -g chr1`
+* *STEP 4* `python s4_RecordToMeMatrix.py -i ./test/test -o ./test/test -r ./test/tmp2.bed -c ./test/ -m 600 -z 1 -g chr1`
 
 	* Please check if there is two output files in test folder, `test_chr1_1287967_1288117_me.txt`; `test_chr1_1287967_1288117_unme.txt`. If yes, it works.
