@@ -48,7 +48,7 @@ Usage: python s4_RecordToMeMatrix.py -i ./test -o ./test -r ./p1.bed -c ./cpgpos
 Usage: visualization_Matlab.m 
 Open this script and edit
 * `path_to_matrix` as the path you deposit the MeMatrix;
-* `path_to_cpgPos` as the path you deposit CpG positions of genome, which is the result of pre_cpg_pos.py;
+* `path_to_cpgPos` as the path you deposit CpG positions of the genome, which is the result of pre_cpg_pos.py;
 * `name` as the name of MeMatrix, for example 'test_chr1_1287967_1288117';
 Output:two lollipop plots, one without considering distance between CpGs, one considering distance between CpGs.
 *unmethylated CpGs are labeled as light blue
