@@ -1,8 +1,8 @@
 
 # MeConcord
-* MeConcord is a method used to investigate local read-level DNA methylation patterns for intermediately methylated regions with bisulfite sequencing data.
+* _MeConcord_ is a method used to investigate local read-level DNA methylation patterns for intermediately methylated regions with bisulfite sequencing data.
 * Intermediately methylated regions occupy a significant fraction of the whole genome and are markedly associated with epigenetic regulations or cell-type deconvolution of bulk data. However, these regions show distinct methylation patterns corresponding to different biological mechanisms. Although there have been some metrics developed for investigating these regions, the poor perfor-mance in antagonizing noises limits the utility for distinguishing distinct methylation patterns.
-* We proposed a method, MeConcord, with two metrics measuring local methylation con-cordance across reads and CpGs, respectively, with Hamming distance. MeConcord showed the most robust performance in distinguishing distinct methylation patterns (identical, uniform, and disor-dered) compared with other metrics. 
+* We proposed a method, _MeConcord_, with two metrics measuring local methylation concordance across reads and CpGs, respectively, with Hamming distance. MeConcord showed the most robust performance in distinguishing distinct methylation patterns (identical, uniform, and disor-dered) compared with other metrics. 
 
 # Installation
 * MeConcord is implemented by Python and compatible with both Python 2 and Python 3. 
@@ -38,7 +38,7 @@ Usage: `python s2_RecordSplit.py -i ./test_ReadsMethyAndMuts.txt -o ./test -g ch
 
 ### 4. Calculating concordance metrics (NRC, NCC and P-values)
 Usage: `python s3_RecordToMeConcord.py -p 4 -i ./test -o ./test -r ./region.bed -c ./cpgpos/ -b 150 -m 600 -z 0 -g chr1,chr2,chr3`
-* `i`,  The path to s2_RecordSplit.py output, with prefix file name;
+* `i`,  The path to s2_RecordSplit.py output, with prefixed file name;
 * `p`,  Threads used for parallel computation; default is 4;
 * `o`,  Output prefix;
 * `r`,  The files with genomic regions for computation, chrom, start, end seperated by tab;
@@ -50,7 +50,7 @@ Usage: `python s3_RecordToMeConcord.py -p 4 -i ./test -o ./test -r ./region.bed 
 
 ### 5. Methylation recordings to methylation matrix (optional)
 Usage: `python s4_RecordToMeMatrix.py -i ./test -o ./test -r ./p1.bed -c ./cpgpos/ -m 600 -z 0 -g chr1,chr2`
-* `i`,  The path to s2_RecordSplit.py output, with prefix file name;
+* `i`,  The path to s2_RecordSplit.py output, with prefixed file name;
 * `o`,  Output prefix;
 * `r`,  The files with genomic regions for computation, chrom, start, end seperated by tab;
 * `c`,  Cpg position folder, output of pre_cpg_pos.py;
