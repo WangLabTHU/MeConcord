@@ -1,12 +1,13 @@
 
 # MeConcord
-MeConcord is a method used to investigate local read-level DNA methylation patterns for intermediately methylated regions with bisulfite sequencing data.
-Motivation: Intermediately methylated regions occupy a significant fraction of the whole genome and are markedly associated with epigenetic regulations or cell-type deconvolution of bulk data. However, these regions show distinct methylation patterns corresponding to different biological mechanisms. Although there have been some metrics developed for investigating these regions, the poor perfor-mance in antagonizing noises limits the utility for distinguishing distinct methylation patterns.
-Results: We proposed a method, MeConcord, with two metrics measuring local methylation con-cordance across reads and CpGs, respectively, with Hamming distance. MeConcord showed the most robust performance in distinguishing distinct methylation patterns (identical, uniform, and disor-dered) compared with other metrics. Applying MeConcord to the whole genome across 25 cell lines or primary cells or tissues, we found distinct methylation patterns were associated with different ge-nomic characteristics, such as CTCF binding sites and imprinted genes. Further, we found the differ-ences of CpG island’s hypermethylation patterns between senescence and tumorigenesis by using MeConcord. MeConcord is a powerful method to study local methylation patterns for both the whole genome and the specific regions of interest.
+* MeConcord is a method used to investigate local read-level DNA methylation patterns for intermediately methylated regions with bisulfite sequencing data.
+* Intermediately methylated regions occupy a significant fraction of the whole genome and are markedly associated with epigenetic regulations or cell-type deconvolution of bulk data. However, these regions show distinct methylation patterns corresponding to different biological mechanisms. Although there have been some metrics developed for investigating these regions, the poor perfor-mance in antagonizing noises limits the utility for distinguishing distinct methylation patterns.
+* We proposed a method, MeConcord, with two metrics measuring local methylation con-cordance across reads and CpGs, respectively, with Hamming distance. MeConcord showed the most robust performance in distinguishing distinct methylation patterns (identical, uniform, and disor-dered) compared with other metrics. 
 
 # Installation
-MeConcord is implemented by Python. Modules of python are required:`pysam`(if the input is .bam files), `pandas`,`numpy`, `scipy`,`multiprocessing`.
-The scripts could be downloaded and used directly with command `python *.py -i ....`
+* MeConcord is implemented by Python and compatible with both Python 2 and Python 3. 
+* Modules of python are required:`pysam`(if the input is .bam files), `pandas`,`numpy`, `scipy`,`multiprocessing`.
+* The scripts could be downloaded and used directly with command `python *.py -i ....`
 
 
 # Usage
