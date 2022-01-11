@@ -47,7 +47,7 @@ Usage: `python s3_RecordToMeConcord.py -p 4 -i ./test -o ./test -r ./region.bed 
 * `p`,  Threads used for parallel computation; default is 4;
 * `o`,  Output prefix;
 * `r`,  The files with genomic regions for computation, chrom, start, end seperated by tab;
-* `c`,  Cpg position folder, output of pre_cpg_pos.py;
+* `c`,  Cpg position folder, output of `pre_cpg_pos.py`;
 * `b`,  Bin size (default 150bp);
 * `z`,  Whether is the genomic file based on 0; 0 (default) or 1; output is same to input bins; if -r is a bed file, -z should be 1;
 * `g`,  Chromosomes used; (default chromsome 1-22); chromosomes shoud be seperated by comma;
@@ -58,7 +58,7 @@ Usage: `python s4_RecordToMeMatrix.py -i ./test -o ./test -r ./p1.bed -c ./cpgpo
 * `i`,  The path to `s2_RecordSplit.py` output, with prefixed file name;
 * `o`,  Output prefix;
 * `r`,  The files with genomic regions for computation, chrom, start, end seperated by tab;
-* `c`,  Cpg position folder, output of pre_cpg_pos.py;
+* `c`,  Cpg position folder, output of `pre_cpg_pos.py`;
 * `z`,  Whether is the genomic file based on 0; 0 (default) or 1; output is same to input bins; if -r is a bed file, -z should be 1;
 * `g`,  Chromosomes used; (default chromsome 1-22); chromosomes shoud be seperated by comma;
 * `m`,  Maximum of reads length (default 600bp for paired-end reads). if there are single-end reads,m should be set length of reads, if not sure, default will work for most cases;
