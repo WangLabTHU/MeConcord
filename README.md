@@ -13,12 +13,12 @@
 if there is any questions, please contact Xianglin Zhang (zhangxl.2015@tsinghua.org.cn) or Xiaowo Wang (xwwang@tsinghua.edu.cn)
 
 # Citation
-------
+
 
 # Usage
 
 ## Input
-MeConcord currently only accept the output(.bam or converted to .sam) of Bismark (https://github.com/FelixKrueger/Bismark/blob/master/README.md)
+MeConcord currently only accept the output(.bam or converted to .sam) of [Bismark](https://github.com/FelixKrueger/Bismark/blob/master/README.md)
 
 ## Run
 ### 1.Obtaining CpG positions across genome
