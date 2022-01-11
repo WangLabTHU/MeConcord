@@ -13,7 +13,7 @@
 if there is any questions, please contact Xianglin Zhang (zhangxl.2015@tsinghua.org.cn) or Xiaowo Wang (xwwang@tsinghua.edu.cn)
 
 # Citation
-***
+------
 
 # Usage
 
