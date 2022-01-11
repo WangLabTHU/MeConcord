@@ -36,14 +36,14 @@ Usage: `python s1_bamToMeRecord.py -i test.bam -o test -c 0`
 
 ### 3.Spliting the big MeRecord files into small files of each chromosome to redude memory requirements in the next step
 Usage: `python s2_RecordSplit.py -i ./test_ReadsMethyAndMuts.txt -o ./test -g chr1,chr2,chr3,chr4,chr5`
-* `i`,  The path to s1 output. ( end with _ReadsMethyAndMuts.txt);
+* `i`,  The path to `s1_bamToMeRecord.py` output. ( end with _ReadsMethyAndMuts.txt);
 * `o`,  Output prefix;
 * `g`,  Chromosomes used; (default chromsome 1-22); chromosomes shoud be seperated by comma;
 * `h`,  Help information
 
 ### 4. Calculating concordance metrics (NRC, NCC and P-values)
 Usage: `python s3_RecordToMeConcord.py -p 4 -i ./test -o ./test -r ./region.bed -c ./cpgpos/ -b 150 -m 600 -z 0 -g chr1,chr2,chr3`
-* `i`,  The path to s2_RecordSplit.py output, with prefixed file name;
+* `i`,  The path to `s2_RecordSplit.py` output, with prefixed file name;
 * `p`,  Threads used for parallel computation; default is 4;
 * `o`,  Output prefix;
 * `r`,  The files with genomic regions for computation, chrom, start, end seperated by tab;
@@ -55,7 +55,7 @@ Usage: `python s3_RecordToMeConcord.py -p 4 -i ./test -o ./test -r ./region.bed 
 
 ### 5. Methylation recordings to methylation matrix (optional)
 Usage: `python s4_RecordToMeMatrix.py -i ./test -o ./test -r ./p1.bed -c ./cpgpos/ -m 600 -z 0 -g chr1,chr2`
-* `i`,  The path to s2_RecordSplit.py output, with prefixed file name;
+* `i`,  The path to `s2_RecordSplit.py` output, with prefixed file name;
 * `o`,  Output prefix;
 * `r`,  The files with genomic regions for computation, chrom, start, end seperated by tab;
 * `c`,  Cpg position folder, output of pre_cpg_pos.py;
@@ -66,7 +66,7 @@ Usage: `python s4_RecordToMeMatrix.py -i ./test -o ./test -r ./p1.bed -c ./cpgpo
 ### 6. Visualization of methylation matrix (optional)
 Usage: `visualization_Matlab.m`
 * Open this script and edit
-	* `path_to_matrix` as the path you deposit the MeMatrix;
+	* `path_to_matrix` as the path you deposit the MeMatrix of `s4_RecordToMeMatrix.py` output;
 	* `path_to_cpgPos` as the path you deposit CpG positions of the genome, which is the result of pre_cpg_pos.py;
 	* `name` as the name of MeMatrix, for example 'test_chr1_1287967_1288117';
 
