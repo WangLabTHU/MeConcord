@@ -9,6 +9,11 @@
 * Modules of python are required:`pysam`(if the input is .bam files), `pandas`,`numpy`, `scipy`,`multiprocessing`.
 * The scripts could be downloaded and used directly with command `python *.py -i ....`
 
+# Contact
+if there is any questions, please contact Xianglin Zhang (zhangxl.2015@tsinghua.org.cn) or Xiaowo Wang (xwwang@tsinghua.edu.cn)
+
+# Citation
+***
 
 # Usage
 
