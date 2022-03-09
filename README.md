@@ -70,7 +70,10 @@ Usage:`python visualization.py -i ./test/test_chr1_1287967_1288117 -o ./test/tes
 * `o`,  The prefix path that you want to deposit pdf files;
 * `c`,  Cpg position folder, output of `pre_cpg_pos.py`;
 * `z`,  Whether is the genomic file based on 0; 0 (default) or 1; output is same to input bins; if -r is a bed file, -z should be 1;
-* Outputs are two lollipop plots in .PDF files.
+* Output: two lollipop plots in .PDF format, one without considering distance between CpGs, one considering distance between CpGs.
+	* unmethylated CpGs are labeled as light blue
+	* CpGs without signal are labeled as grey
+	* methylated CpGs are labeled as dark red
 * <img src="https://github.com/vhang072/MeConcord/blob/main/pics/lollipop plot_1.PNG" width="450" height="400">
 * <img src="https://github.com/vhang072/MeConcord/blob/main/pics/lollipop plot_2.PNG" width="250" height="400">
 
