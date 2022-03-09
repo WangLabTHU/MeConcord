@@ -71,8 +71,8 @@ Usage:`python visualization.py -i ./test/test_chr1_1287967_1288117 -o ./test/tes
 * `c`,  Cpg position folder, output of `pre_cpg_pos.py`;
 * `z`,  Whether is the genomic file based on 0; 0 (default) or 1; output is same to input bins; if -r is a bed file, -z should be 1;
 * Outputs are two lollipop plots in .PDF files.
-![output plot 1](https://github.com/vhang072/MeConcord/tree/main/pics/tmp_1.png)
-![output plot 2](https://github.com/vhang072/MeConcord/tree/main/pics/tmp_2.png)
+![output plot 1](./pics/tmp_1.png)
+![output plot 2](./pics/tmp_2.png)
 
 
 #### choice 2
