@@ -25,10 +25,11 @@ for op,val in opts:
     elif op == '-z':
         zero_based = int(val)
     elif op == '-h':
-        print('Usage: python visualization.py -i ./test/test_chr1_1287967_1288117 -o ./test/test -c ./cpgpos/ \n\
+        print('Usage: python visualization.py -i ./test/test_chr1_1287967_1288117 -o ./test/test -c ./cpgpos/ -z 0\n\
               i,The prefix path to recordMat (prefix before _me.txt or _unme.txt);\n\
               o,The prefix path that you want to deposit pdf files;\n\
               c,Cpg position folder, output of pre_cpg_pos.py;\n\
+              z,Whether is the genomic file based on 0; 0 (default) or 1; output is same to input bins; if -r is a bed file, -z should be 1;\n\
               h,Help information')
         sys.exit()
 

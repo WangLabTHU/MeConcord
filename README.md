@@ -34,7 +34,7 @@ Usage: `python s1_bamToMeRecord.py -i test.bam -o test -c 0`
 * `c`,  Clipping read ends with such base number (defalut 0); can be used when sequencing quality of read ends is not good. such as -c 5 to remove 5 bases from the both ends of the reads.
 * `h`,  Help information
 
-### 3.Spliting the big MeRecord files into small files of each chromosome to redude memory requirements in the next step
+### 3.Spliting the big MeRecord files into small files of each chromosome to reduce memory requirements in the next step
 Usage: `python s2_RecordSplit.py -i ./test_ReadsMethyAndMuts.txt -o ./test -g chr1,chr2,chr3,chr4,chr5`
 * `i`,  The path to `s1_bamToMeRecord.py` output. ( end with _ReadsMethyAndMuts.txt);
 * `o`,  Output prefix;
@@ -63,7 +63,19 @@ Usage: `python s4_RecordToMeMatrix.py -i ./test -o ./test -r ./p1.bed -c ./cpgpo
 * `g`,  Chromosomes used; (default chromsome 1-22); chromosomes shoud be seperated by comma;
 * `m`,  Maximum of reads length (default 600bp for paired-end reads). if there are single-end reads,m should be set length of reads, if not sure, default will work for most cases;
 
-### 6. Visualization of methylation matrix (optional)
+### 6. Visualization of methylation matrix (optional, both `visualization_Matlab.m` and `visualization.py` scripts are used for visualization dependent on your choices)
+#### choice 1
+Usage:`python visualization.py -i ./test/test_chr1_1287967_1288117 -o ./test/test -c ./cpgpos/ -z 0`
+* `i`,  The prefix path to recordMat (prefix before _me.txt or _unme.txt);
+* `o`,  The prefix path that you want to deposit pdf files;
+* `c`,  Cpg position folder, output of `pre_cpg_pos.py`;
+* `z`,  Whether is the genomic file based on 0; 0 (default) or 1; output is same to input bins; if -r is a bed file, -z should be 1;
+* Outputs are two lollipop plots in .PDF files.
+![output plot 1](https://github.com/vhang072/MeConcord/tree/main/pics/tmp_1.png)
+![output plot 2](https://github.com/vhang072/MeConcord/tree/main/pics/tmp_2.png)
+
+
+#### choice 2
 Usage: `visualization_Matlab.m`
 * Open this script and edit
 	* `path_to_matrix` as the path you deposit the MeMatrix of `s4_RecordToMeMatrix.py` output;
@@ -89,3 +101,7 @@ Usage: `visualization_Matlab.m`
 * *STEP 4* `python s4_RecordToMeMatrix.py -i ./test/test -o ./test/test -r ./test/tmp2.bed -c ./test/ -m 600 -z 1 -g chr1`
 
 	* Please check if there is two output files in test folder, `test_chr1_1287967_1288117_me.txt`; `test_chr1_1287967_1288117_unme.txt`. If yes, it works.
+
+* *STEP 5* `python visualization.py -i ./test/test_chr1_1287967_1288117 -o ./test/test -c ./test/ -z 0`
+
+	* Please check if there is two output files in test folder, `test_chr1_1287967_1288117_cpgnum.pdf`; `test_chr1_1287967_1288117_cpgpos.pdf`. If yes, it works.
