@@ -9,6 +9,7 @@ import pandas as pd
 import math
 import sys,getopt
 basedon0 = 0
+max_dis = 600
 chrom_used = ['chr'+str(x) for x in range(1,23)]
 opts,args = getopt.getopt(sys.argv[1:],"hi:o:r:m:c:z:g:")
 for op,val in opts:

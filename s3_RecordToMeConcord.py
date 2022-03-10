@@ -15,6 +15,7 @@ opts,args = getopt.getopt(sys.argv[1:],"hi:o:r:m:c:b:p:z:g:")
 interval_size = 150
 cores = 4
 basedon0 = 0
+max_dis = 600
 chrom_used = ['chr'+str(x) for x in range(1,23)]
 for op,val in opts:
     if op == '-i':
@@ -67,9 +68,9 @@ def extracting_methy(reads1,reads2,pos1,pos2,cpg_pos_wanted,methy_pattern):
 
 def each_chrom(outpre,infile,cpgpos_path,binfile,chrom):
     # inner pars
-    min_cpg = 2
-    min_read = 2
-    min_overlap = 2
+    min_cpg = 4
+    min_read = 4
+    min_overlap = 4
     max_read = 500
     filter_reads_cpgnum = 2
     #inner loading and saving
