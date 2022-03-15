@@ -91,6 +91,9 @@ Usage: `visualization_Matlab.m`
 	* CpGs without signal are labeled as grey
 	* methylated CpGs are labeled as dark red
 
+## CPU time and memory
+* <img src="https://github.com/vhang072/MeConcord/blob/main/pics/CPU.PNG" width="600" height="150">
+
 ## Test for an example
 * *STEP 1* `python s1_bamToMeRecord.py -i ./test/GM12878_chr1_1286017_1294783.bam -o ./test/test -c 2` or `python s1_bamToMeRecord.py -i ./test/GM12878_chr1_1286017_1294783.sam -o ./test/test -c 2` if there is no pysam module on Windows
 
