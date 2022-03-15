@@ -6,7 +6,7 @@
 
 # Installation
 * MeConcord is implemented by Python and compatible with both Python 2 and Python 3. 
-* Modules of python are required:`pysam`(if the input is .bam files), `pandas`,`numpy`, `scipy`,`multiprocessing`.
+* Modules of python are required:`pysam`(if the input is .bam files), `pandas`,`numpy`, `scipy`,`multiprocessing`,`matplotlib`(if you use visualization.py).
 * The scripts could be downloaded and used directly with command `python *.py -i ....`
 
 # Contact
