@@ -13,7 +13,7 @@
 if there is any questions, please contact Xianglin Zhang (zhangxl.2015@tsinghua.org.cn) or Xiaowo Wang (xwwang@tsinghua.edu.cn)
 
 # Citation
-
+Xianglin Zhang and Xiaowo Wang, MeConcord: a new metric to quantitatively characterize DNA methylation heterogeneity across reads and CpG sites, is accepted in ISMB 2022 and will be published in Bioinformatics
 
 # Usage
 
